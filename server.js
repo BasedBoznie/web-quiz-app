@@ -41,7 +41,7 @@ app.get('/quizzes', (req, res) => {
                 .map(file => {
                     const quizPath = path.join(quizzesDir, file);
                     const quizData = JSON.parse(fs.readFileSync(quizPath, 'utf8'));
-                    return { filename: file, title: quizData.title }; // Include filename and title
+                    return { filename: file, title: quizData.title, timestamp: quizData.timestamp }; // Include filename and title
                 });
                 
             res.json(quizzesWithTitles); // Send the array of quizzes with titles to the client
@@ -56,7 +56,8 @@ app.post('/save-quiz', (req, res) => {
         return res.status(400).json({ error: "Invalid quiz data" });
     }
 
-    const filename = `${quizData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.json`;
+    const timestamp = quizData.timestamp;
+    const filename = `${quizData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${timestamp}.json`;
     const filePath = path.join(__dirname, 'quizzes', filename);
 
     fs.writeFile(filePath, JSON.stringify(quizData, null, 2), (err) => {

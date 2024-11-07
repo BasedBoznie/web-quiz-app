@@ -1,4 +1,4 @@
-// src/scripts/solveQuiz.js
+// src/scripts/solvequiz.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentQuestionIndex = 0;
 let score = 0;
 let quizData = [];
+let quizId;
 
 // Function to load the quiz data
 function loadQuiz(quizName) {
@@ -18,6 +19,16 @@ function loadQuiz(quizName) {
         .then(response => response.json())
         .then(data => {
             quizData = data.questions;
+            quizId = data.timestamp;
+            const quizIdElement = document.getElementById('quiz-id');
+            if (quizIdElement) {
+                quizIdElement.textContent = quizId;
+            }
+            document.title = data.title; // Set page title to quiz title
+            const quizTitleElement = document.getElementById('quiz-title');
+            if (quizTitleElement) {
+                quizTitleElement.textContent = data.title; // Display quiz title on the page
+            }
             displayQuestion();
         })
         .catch(error => console.error('Error loading quiz:', error));
