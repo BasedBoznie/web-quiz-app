@@ -6,11 +6,33 @@
     <title>Available Quizzes</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/quiz-list.js"></script>
+    <script src="scripts/index-script.js" defer></script>
 </head>
 <body>
-    <h1>Available Quizzes</h1>
-    <ul id="quiz-list">
+
+    <div class="sidebar" id="sidebar">
+        <div class="nav-menu">
+           <button onclick="window.location.href='quizzes.html'" class="nav-btn">quiz list</button>
+           <button onclick="window.location.href='create-quiz.html'" class="nav-btn">create quiz</button>
+       </div>
+   </div>
+
+   <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="content">
+        <div class="search-quiz-menu">
+            <div class="search-menu-header">
+                <h1>Available Quizzes</h1>
+            </div>
+            <div class="search-menu-bar">
+                <input type="text" id="search-input" placeholder="Search for a quiz..." />
+            </div>
+            <div class="quiz-list-container">
+                <ul id="quiz-list">
         
-    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

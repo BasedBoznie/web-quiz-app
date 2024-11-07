@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/index-script.js" defer></script>
     <title>web-quiz-app</title>
 </head>
 <body>
-    <div class="app-container">
-        <div class="index-header">
-            <h1>quiz-app</h1>
+    <div class="sidebar" id="sidebar">
+         <div class="nav-menu">
+            <button onclick="window.location.href='quizzes.html'" class="nav-btn">quiz list</button>
+            <button onclick="window.location.href='create-quiz.html'" class="nav-btn">create quiz</button>
         </div>
-        <div class="index-body">
-            <div class="nav-grid">
-                <button onclick="window.location.href='quizzes.html'" class="nav-btn">quizzes</button>
-                <button onclick="window.location.href='create-quiz.html'" class="nav-btn">create quiz</button>
-            </div>
-        </div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="content">
+        <div class="quiz-app-title">
+            <h1 class="index-h1">quiz-app</h1>
+         </div>
     </div>
 </body>
 </html>

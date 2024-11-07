@@ -1,162 +1,135 @@
 :root {
-    /* Primary colors */
-    --color-1: #c1c8e4;
-    --color-2: #84ceeb;
-    --color-3: #5ab9ea;
-    --color-4: #5680e9;
-    --color-5: #8860d0;
-    --color-6: #45179b;
-
-    /* Secondary colors */
-    --color-11: #314455;
-    --color-12: #644e5b;
-    --color-13: #9e5a63;
-    --color-14: #c96567;
-    --color-15: #97aabd;
-
-    --color-placeholder-1: #c1c8e4;
-    --color-placeholder-2: #84ceeb;
-    --color-placeholder-3: #5ab9ea;
-    --color-placeholder-4: #5680e9;
-    --color-placeholder-5: #8860d0;
+    --color-1: #0b0c10;
+    --color-2: #1f2833;
+    --color-3: #c5c6c7;
+    --color-4: #66fcf1;
+    --color-5: #45a29e;
 }
-
 
 body {
-    background: linear-gradient(
-        135deg,
-        var(--color-2),
-        var(--color-3),
-        var(--color-4),
-        var(--color-5)
-    );
-    background-size: cover; /* Fills the content area, not just the viewport */
-    background-attachment: fixed; /* Makes background fixed and seamless */
-    background-repeat: no-repeat; /* Prevents unwanted repetition */
-    min-height: 100%; /* Ensures at least full height */
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    max-height: 100%;
+    background-color: var(--color-2);
+    display: flex;
+    font-family: 'Dosis', sans-serif;
 }
 
-h1 {
-    font-weight: 800;
-    font-style: italic;
-}
-
-/*
-body::before {
-    content: "";
-    position: absolute;
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-    pointer-events: none;
-}
-*/
-.app-container {
-    /*
-    background-color: #e7ebfd;
-    */
-    background-color: #ffffff;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--color-1);
+    color: #fff;
     display: flex;
+    border-right: 1px solid black;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    width: 40%;
-    max-width: 90%;
-    max-height: 90%;
-    margin: 0 auto;
-    margin-top: 10%;
-    border-radius: 1vh;
-    border: solid 1px var(--color-4);
-    box-shadow: 0px 4px 4px #230e4b;
-    flex-wrap: wrap;
+    transform: translateX(-200px); /* Hidden by default */
+    transition: transform 0.3s ease;
+    z-index: 1;
 }
 
-.index-header {
-    padding: 0.2rem;
-    width: 98%;
-    margin-bottom: 2rem;
-    border-bottom: 1.5px solid var(--color-4);
-    color: var(--color-6)
+/* Toggle button styling */
+.toggle-btn {
+    position: fixed;
+    top: 2vh;
+    left: 0;
+    background-color: var(--color-1);
+    color: #fff;
+    border: none;
+    border-left: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2; /* Ensure it stays on top of other elements */
+    transition: left 0.3s ease;
+    padding: 0.5rem 1rem;
 }
 
-.index-body {
-    width: 95%;
-    margin-bottom: 1.5rem;
-    border-radius: 2px;
+.toggle-btn:hover {
+    background-color: var(--color-2);
 }
 
-.nav-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* One column by default */
-    gap: 0.3rem;
+/* When the sidebar is active, shift the toggle button */
+.sidebar.active + .toggle-btn {
+    left: 200px; /* Shift the button to the sidebar's width */
+}
+
+.nav-menu {
+    background-color: var(--color-1);
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin: 0 auto;
+    top: 0;
 }
 
 .nav-btn {
-    padding: 0.5rem;
-    background-color: #bbc6eb;
-    border: 1px solid var(--color-4);
-    border-radius: 2px;
-    text-align: center;
-    font-size: 20px;
-    color: var(--color-6);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-1);
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+    color: var(--color-3)
 }
 
 .nav-btn:hover {
-    background-color: var(--color-6);
-    color: #b8ebff;
-    border-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
-/* For large desktops */
-@media (min-width: 1200px) {
-    .app-container {
-        max-width: 70%; /* Narrow the content on larger screens */
-        max-height: 90%;
-    }
+.content {
+    margin-left: 0; /* Start content at edge when sidebar is hidden */
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    background-color: var(--color-2);
+    background-image: url('../img/image1.jpg'); /* Set the image URL */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image within the element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: margin-left 0.3s ease;
 }
 
-/* For tablets and smaller laptops */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .app-container {
-        width: 70%;
-        margin-top: 5vh;
-        max-height: 90%;
-    }
+/* Sidebar active state */
+.sidebar.active {
+    transform: translateX(0); /* Slide in */
 }
 
-/* For mobile devices */
-@media (max-width: 767px) {
-    .index-header {
-        font-size: 1rem;
-    }
+/*
+.content.shift {
+    margin-left: 200px;
+}
+*/
 
-    .app-container {
-        margin-top: 10vh;
-        width: 85%;
-        height: 80%;
-        max-height: 90%;
-        padding: 0.5rem;
-    }
-
-    .nav-grid {
-        gap: 2rem;
-    }
-
-    .nav-btn {
-        padding: 2.5rem;
-        font-size: 1.5rem;
-    }
+.quiz-app-title {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
 }
 
+h1.index-h1 {
+    font-weight: 400;
+    font-size: 10rem;
+    color: white;
+    opacity: 1;
+    cursor: default;
+}
 
+h1.index-h1:hover {
+    color: var(--color-4);
+    border-bottom: 1px solid var(--color-5);
+    transition: all 0.3s ease-in-out;
+}
 
+.search-quiz-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
