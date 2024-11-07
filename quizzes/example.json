@@ -1,0 +1,30 @@
+{
+    "title": "General Knowledge Quiz",
+    "questions": [
+        {
+            "question": "What is the capital of France?",
+            "options": ["Paris", "London", "Berlin", "Madrid"],
+            "answer": "Paris"
+        },
+        {
+            "question": "Which planet is known as the Red Planet?",
+            "options": ["Earth", "Venus", "Mars", "Jupiter"],
+            "answer": "Mars"
+        },
+        {
+            "question": "Who wrote 'Hamlet'?",
+            "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+            "answer": "William Shakespeare"
+        },
+        {
+            "question": "What is the largest mammal?",
+            "options": ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
+            "answer": "Blue Whale"
+        },
+        {
+            "question": "In which year did World War II end?",
+            "options": ["1945", "1939", "1965", "1918"],
+            "answer": "1945"
+        }
+    ]
+}

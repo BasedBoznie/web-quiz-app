@@ -1,0 +1,14 @@
+{
+  "title": "Good Quiz",
+  "questions": [
+    {
+      "question": "Does it work?",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe..."
+      ],
+      "answer": "Yes"
+    }
+  ]
+}
