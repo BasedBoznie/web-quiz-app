@@ -7,6 +7,13 @@
     --color-5: #8860d0;
     --color-6: #45179b;
 
+    /* Secondary colors */
+    --color-11: #314455;
+    --color-12: #644e5b;
+    --color-13: #9e5a63;
+    --color-14: #c96567;
+    --color-15: #97aabd;
+
     --color-placeholder-1: #c1c8e4;
     --color-placeholder-2: #84ceeb;
     --color-placeholder-3: #5ab9ea;
@@ -28,11 +35,16 @@ body {
     background-repeat: no-repeat; /* Prevents unwanted repetition */
     min-height: 100%; /* Ensures at least full height */
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-style: normal;
     max-height: 100%;
 }
+
+h1 {
+    font-weight: 800;
+    font-style: italic;
+}
+
 /*
 body::before {
     content: "";
@@ -46,7 +58,10 @@ body::before {
 }
 */
 .app-container {
-    background-color: #d5ddff;
+    /*
+    background-color: #e7ebfd;
+    */
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +71,7 @@ body::before {
     max-height: 90%;
     margin: 0 auto;
     margin-top: 10%;
-    border-radius: 5px;
+    border-radius: 1vh;
     border: solid 1px var(--color-4);
     box-shadow: 0px 4px 4px #230e4b;
     flex-wrap: wrap;
@@ -71,14 +86,17 @@ body::before {
 }
 
 .index-body {
-    width: 98%;
+    width: 95%;
     margin-bottom: 1.5rem;
+    border-radius: 2px;
 }
 
 .nav-grid {
     display: grid;
     grid-template-columns: 1fr; /* One column by default */
     gap: 0.3rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .nav-btn {
@@ -89,12 +107,13 @@ body::before {
     text-align: center;
     font-size: 20px;
     color: var(--color-6);
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 .nav-btn:hover {
-    background-color: var(--color-5);
-    color: #a0e0fa;
+    background-color: var(--color-6);
+    color: #b8ebff;
     border-color: var(--color-2);
 }
 
