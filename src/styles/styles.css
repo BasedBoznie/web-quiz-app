@@ -5,6 +5,7 @@
     --color-3: #5ab9ea;
     --color-4: #5680e9;
     --color-5: #8860d0;
+    --color-6: #45179b;
 
     --color-placeholder-1: #c1c8e4;
     --color-placeholder-2: #84ceeb;
@@ -22,9 +23,17 @@ body {
         var(--color-4),
         var(--color-5)
     );
-    background-size: 100vw 100vh;
+    background-size: cover; /* Fills the content area, not just the viewport */
+    background-attachment: fixed; /* Makes background fixed and seamless */
+    background-repeat: no-repeat; /* Prevents unwanted repetition */
+    min-height: 100%; /* Ensures at least full height */
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-height: 100%;
 }
-
+/*
 body::before {
     content: "";
     position: absolute;
@@ -35,18 +44,100 @@ body::before {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
     pointer-events: none;
 }
-
+*/
 .app-container {
-    background-color: #d6e7f8;
+    background-color: #d5ddff;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+    width: 40%;
     max-width: 90%;
+    max-height: 90%;
     margin: 0 auto;
     margin-top: 10%;
-    border-radius: 2px;
+    border-radius: 5px;
+    border: solid 1px var(--color-4);
     box-shadow: 0px 4px 4px #230e4b;
+    flex-wrap: wrap;
 }
+
+.index-header {
+    padding: 0.2rem;
+    width: 98%;
+    margin-bottom: 2rem;
+    border-bottom: 1.5px solid var(--color-4);
+    color: var(--color-6)
+}
+
+.index-body {
+    width: 98%;
+    margin-bottom: 1.5rem;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* One column by default */
+    gap: 0.3rem;
+}
+
+.nav-btn {
+    padding: 0.5rem;
+    background-color: #bbc6eb;
+    border: 1px solid var(--color-4);
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--color-6);
+    font-weight: 600;
+}
+
+.nav-btn:hover {
+    background-color: var(--color-5);
+    color: #a0e0fa;
+    border-color: var(--color-2);
+}
+
+/* For large desktops */
+@media (min-width: 1200px) {
+    .app-container {
+        max-width: 70%; /* Narrow the content on larger screens */
+        max-height: 90%;
+    }
+}
+
+/* For tablets and smaller laptops */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .app-container {
+        width: 70%;
+        margin-top: 5vh;
+        max-height: 90%;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+    .index-header {
+        font-size: 1rem;
+    }
+
+    .app-container {
+        margin-top: 10vh;
+        width: 85%;
+        height: 80%;
+        max-height: 90%;
+        padding: 0.5rem;
+    }
+
+    .nav-grid {
+        gap: 2rem;
+    }
+
+    .nav-btn {
+        padding: 2.5rem;
+        font-size: 1.5rem;
+    }
+}
+
 
 
