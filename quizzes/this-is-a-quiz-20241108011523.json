@@ -1,0 +1,22 @@
+{
+  "title": "This IS a quiz",
+  "timestamp": "20241108011523",
+  "questions": [
+    {
+      "question": "Is THIS a quiz?",
+      "options": [
+        "yessir",
+        "no"
+      ],
+      "answer": "yessir"
+    },
+    {
+      "question": "Are you ever gonna create a frontend for creating quizzes?",
+      "options": [
+        "It's too much to handle",
+        "I'm sorry"
+      ],
+      "answer": "I'm sorry"
+    }
+  ]
+}
