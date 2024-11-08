@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/create-quiz.js"></script>
+    <script src="scripts/index-script.js"></script>
 </head>
 <body>
-    <h1>Create a New Quiz</h1>
-    <form id="quiz-form">
-        <label for="title">Quiz Title:</label>
-        <input type="text" id="title" name="title" required>
+    <div class="sidebar" id="sidebar">
+        <div class="nav-menu">
+           <button onclick="window.location.href='index.html'" class="nav-btn">home</button>
+           <button onclick="window.location.href='create-quiz.html'" class="nav-btn">create quiz</button>
+       </div>
+    </div>
 
-        <div id="questions-container">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="content">
+        <h1>Create a New Quiz</h1>
+        <form id="quiz-form">
+            <label for="title">Quiz Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <div id="questions-container">
             
-        </div>
+            </div>
 
-        <button type="button" onclick="addQuestion()">Add Question</button>
-        <button type="submit">Save Quiz</button>
-    </form>
+            <button type="button" onclick="addQuestion()">Add Question</button>
+            <button type="submit">Save Quiz</button>
+        </form>
+    </div>
 </body>
 </html>
