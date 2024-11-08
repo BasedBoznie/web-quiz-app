@@ -120,6 +120,7 @@ input[type="radio"] {
 
 h1.index-h1 {
     font-weight: 400;
+    text-shadow: var(--color-2) 2px 2px;
     font-size: 10rem;
     color: white;
     opacity: 1;
@@ -143,7 +144,7 @@ h1.index-h1:hover {
     margin-top: 25vh;
     padding-bottom: 2.5vh;
     background-color: var(--color-6);
-    /*box-shadow: 0px 10px 15px var(--color-1);*/
+    box-shadow: 0px 10px 15px var(--color-1);
 }
 
 .search-menu-header {
@@ -199,7 +200,7 @@ h1.index-h1:hover {
     background-color: var(--color-6);
 }
 
-.quiz-solving-container {
+#quiz-solving-container {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -207,10 +208,15 @@ h1.index-h1:hover {
     width: 40%;
     height: 40vh;
     margin-top: 25vh;
+    border-radius: 0.25rem;
+    box-shadow: 0px 10px 15px var(--color-1);
 }
 
 .quiz-solving-header {
     background-color: var(--color-6);
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom: 1px solid black;
 }
 
 h1.quiz-solving-title {
@@ -236,15 +242,12 @@ h3 {
 }
 
 .option-label {
-    display: grid;
     background-color: var(--color-1);
     color: var(--color-3);
     padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    border: 2px solid var(--color-3); /* Button border */
+    border: 1px solid var(--color-2); /* Button border */
 }
 
 .option-label.selected {
@@ -253,10 +256,56 @@ h3 {
     border-color: var(--color-1); /* Change border color when selected */
 }
 
-.next-btn {
-    outline: none;
-    border: none;
-    background-color: var(--color-1);
-    color: var(--color-5);
+.option-label:hover:not(.selected) {
+    background-color: var(--color-6);
 }
 
+.next-btn {
+    outline: none;
+    padding: 0.5rem;
+    background-color: var(--color-1);
+    border: 1px solid var(--color-2);
+    border-top: none;
+    color: var(--color-5);
+    font-size: 1rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin: 0 auto;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.next-btn:hover {
+    background-color: var(--color-5);
+    color: var(--color-2);
+    cursor: pointer;
+}
+/*
+#options-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+*/
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+#options-container {
+    display: grid;
+}
+
+#options-container.four-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 0 auto;
+}

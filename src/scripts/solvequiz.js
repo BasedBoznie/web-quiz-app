@@ -44,6 +44,7 @@ function displayQuestion() {
     // Get question and options containers
     const questionContainer = document.getElementById('question-container');
     const optionsContainer = document.getElementById('options-container');
+    const quizSolvingContainer = document.getElementById('quiz-solving-container');
 
     // Clear previous content
     questionContainer.innerHTML = '';
@@ -86,16 +87,22 @@ function displayQuestion() {
         optionsContainer.appendChild(optionLabel);
     });
 
-    // Add Next/Submit button
+    // Remove previous next button if it exists
+    const existingNextButton = quizSolvingContainer.querySelector('.next-btn');
+    if (existingNextButton) {
+        existingNextButton.remove();
+    }
+
+    // Add Next/Submit button below the options
     const nextButton = document.createElement('button');
+    const nextButtonContainer = document.getElementById('next-btn-container-why');
     nextButton.classList.add("next-btn");
     nextButton.textContent = currentQuestionIndex < quizData.length - 1 ? 'Next' : 'Submit';
     nextButton.addEventListener('click', checkAnswer);
-    questionContainer.appendChild(nextButton);
-
-    // Append optionsContainer to questionContainer if not already there
-    questionContainer.appendChild(optionsContainer);
+    nextButtonContainer.appendChild(nextButton); // Append the button to the options container (below options)
 }
+
+
 
 
 // Function to check the selected answer
@@ -119,5 +126,12 @@ function checkAnswer() {
 // Function to display the final result
 function displayResult() {
     const questionContainer = document.getElementById('question-container');
+    const optionsContainer = document.getElementById('options-container');
+    const nextButtonContainer = document.getElementById('next-btn-container-why');
+    const existingNextButton = nextButtonContainer.querySelector('.next-btn');
+    if (existingNextButton) {
+        existingNextButton.remove();
+    }
+    optionsContainer.innerHTML = ''; // Clear the options
     questionContainer.innerHTML = `<h2>Your Score: ${score} / ${quizData.length}</h2>`;
 }
