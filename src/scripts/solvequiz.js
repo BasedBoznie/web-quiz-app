@@ -41,31 +41,62 @@ function displayQuestion() {
         return;
     }
 
+    // Get question and options containers
     const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = ''; // Clear previous content
+    const optionsContainer = document.getElementById('options-container');
+
+    // Clear previous content
+    questionContainer.innerHTML = '';
+    optionsContainer.innerHTML = ''; // Clear previous options only
 
     const questionData = quizData[currentQuestionIndex];
     const questionText = document.createElement('h3');
     questionText.textContent = `Q${currentQuestionIndex + 1}: ${questionData.question}`;
     questionContainer.appendChild(questionText);
 
+    // Add the options to optionsContainer
+    const optionCount = questionData.options.length;
+    optionsContainer.className = ''; // Reset any previous classes
+    optionsContainer.classList.add(
+        optionCount === 2 ? 'two-options' :
+        optionCount === 3 ? 'three-options' :
+        optionCount === 4 ? 'four-options' :
+        optionCount === 5 ? 'five-options' :
+        optionCount === 6 ? 'six-options' :
+        optionCount === 7 ? 'seven-options' :
+        'eight-options'
+    );
+
     questionData.options.forEach(option => {
         const optionLabel = document.createElement('label');
         optionLabel.className = 'option-label';
+
         const optionInput = document.createElement('input');
         optionInput.type = 'radio';
         optionInput.name = 'option';
         optionInput.value = option;
+
+        optionInput.addEventListener('change', () => {
+            document.querySelectorAll('.option-label').forEach(label => label.classList.remove('selected'));
+            optionLabel.classList.add('selected');
+        });
+
         optionLabel.appendChild(optionInput);
         optionLabel.appendChild(document.createTextNode(option));
-        questionContainer.appendChild(optionLabel);
+        optionsContainer.appendChild(optionLabel);
     });
 
+    // Add Next/Submit button
     const nextButton = document.createElement('button');
+    nextButton.classList.add("next-btn");
     nextButton.textContent = currentQuestionIndex < quizData.length - 1 ? 'Next' : 'Submit';
     nextButton.addEventListener('click', checkAnswer);
     questionContainer.appendChild(nextButton);
+
+    // Append optionsContainer to questionContainer if not already there
+    questionContainer.appendChild(optionsContainer);
 }
+
 
 // Function to check the selected answer
 function checkAnswer() {
