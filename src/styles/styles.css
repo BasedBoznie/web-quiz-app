@@ -301,6 +301,7 @@ h3 {
 
 #options-container {
     display: grid;
+    text-align: center;
 }
 
 #options-container.four-options {
@@ -308,4 +309,27 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     margin: 0 auto;
+}
+
+#options-container.two-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+.option-label.two-options {
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+#options-container.eight-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+#options-container.six-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
 }

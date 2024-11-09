@@ -72,6 +72,16 @@ function displayQuestion() {
         const optionLabel = document.createElement('label');
         optionLabel.className = 'option-label';
 
+        optionLabel.classList.add(
+            optionCount === 2 ? 'two-options' :
+            optionCount === 3 ? 'three-options' :
+            optionCount === 4 ? 'four-options' :
+            optionCount === 5 ? 'five-options' :
+            optionCount === 6 ? 'six-options' :
+            optionCount === 7 ? 'seven-options' :
+            'eight-options'
+        );
+
         const optionInput = document.createElement('input');
         optionInput.type = 'radio';
         optionInput.name = 'option';
