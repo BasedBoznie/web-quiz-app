@@ -1,0 +1,31 @@
+{
+  "title": "The BEST quiz",
+  "timestamp": "20241109014251",
+  "questions": [
+    {
+      "question": ":3",
+      "options": [
+        "cutie :3",
+        "huh"
+      ],
+      "answer": "cutie :3"
+    },
+    {
+      "question": "...one by one they all pass",
+      "options": [
+        "aham",
+        "well, well, well..."
+      ],
+      "answer": "well, well, well..."
+    },
+    {
+      "question": "...the seconds that sway them",
+      "options": [
+        "Charles Dickens",
+        "William Shakespeare",
+        "...why are these names autofilled?"
+      ],
+      "answer": "...why are these names autofilled?"
+    }
+  ]
+}
