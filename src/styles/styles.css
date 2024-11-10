@@ -165,6 +165,7 @@ h1.index-h1:hover {
     border-bottom: 1px solid var(--color-1);
     padding-left: 1vw;
     padding-right: 1.3vw;
+    min-height: 2.52vh;
 }
 
 #search-input {
@@ -332,4 +333,64 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+}
+
+.quiz-creator-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 25vh;
+    height: 50vh;
+    max-height: 50vh;
+    border-radius: 0.25rem;
+    box-shadow: 0px 10px 15px var(--color-1);
+    background-color: var(--color-6);
+}
+
+h1#quiz-creator-title {
+    padding-left: 2vw;
+    color: var(--color-3);
+}
+
+.quiz-creator-header {
+    background-color: var(--color-6);
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+#quiz-form {
+    background-color: var(--color-1);
+    overflow-y: auto;
+}
+
+.quiz-creator-quiz-title {
+    background-color: var(--color-2);
+    border-bottom: 1px solid black;
+    border-top: 1px solid var(--color-1);
+    color: var(--color-3);
+    min-height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.title-input {
+    padding-left: 0.3rem;
+    outline: none;
+    border: none;
+    border-radius: 0.15rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+    font-size: 0.95rem;
+    margin-left: 0.4vw;
+    margin-top: 0.35vh;
+    width: 70%;
+    color: var(--color-4);
+    background-color: #39414b;
+}
+
+.title-input-label {
+    margin-left: 1vw;
 }
