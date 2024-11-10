@@ -36,11 +36,20 @@ function addQuestion() {
             <!-- Options will be added here -->
         </div>
         <button type="button" onclick="addOption(${questionCount})">Add Option</button>
+        <button type="button" onclick="removeQuestion(${questionCount})">Remove Question</button>
     `;
     
     questionsContainer.appendChild(questionDiv);
     addOption(questionCount); // Add the first two options by default
     addOption(questionCount);
+}
+
+function removeQuestion(questionId) {
+    const questionDiv = document.getElementById(`question-${questionId}`);
+    if (questionDiv) {
+        questionDiv.remove();
+        questionCount--;
+    }
 }
 
 function addOption(questionId) {
@@ -57,9 +66,25 @@ function addOption(questionId) {
     optionDiv.innerHTML = `
         <input type="radio" name="correct-answer-${questionId}" value="${optionCount}" required>
         <input type="text" name="question-${questionId}-option-${optionCount}" placeholder="Enter option" required>
+        <button type="button" onclick="removeOption(${questionId}, ${optionCount})">Remove Option</button>
     `;
 
     optionsContainer.appendChild(optionDiv);
+}
+
+function removeOption(questionId, optionIndex) {
+    const optionsContainer = document.getElementById(`options-container-${questionId}`);
+    const optionCount = optionsContainer.children.length;
+
+    if (optionCount <= 2) {
+        alert("Each question must have at least 2 options.");
+        return;
+    }
+
+    const optionDiv = optionsContainer.children[optionIndex];
+    if (optionDiv) {
+        optionDiv.remove();
+    }
 }
 
 function submitQuiz(event) {
