@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const quizForm = document.getElementById('quiz-form');
-    quizForm.addEventListener('submit', submitQuiz);
+    const quizFooter = document.getElementById('quiz-creator-footer');
+    quizFooter.addEventListener('submit', submitQuiz);
 });
 
 let questionCount = 0;
@@ -88,7 +89,7 @@ function removeOption(questionId, optionIndex) {
 }
 
 function submitQuiz(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     const quizTitle = document.getElementById('title').value;
     const questions = [];

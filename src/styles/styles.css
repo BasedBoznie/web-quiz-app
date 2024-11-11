@@ -361,6 +361,7 @@ h1#quiz-creator-title {
 
 #quiz-form {
     background-color: var(--color-1);
+    min-height: 31vh;
     overflow-y: auto;
 }
 
@@ -393,4 +394,37 @@ h1#quiz-creator-title {
 
 .title-input-label {
     margin-left: 1vw;
+}
+
+#quiz-creator-footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-2);
+    width: 100%;
+    height: 6vh;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.quiz-creator-save-button {
+    outline: none;
+    padding: 0.5rem;
+    background-color: var(--color-2);
+    border: 1px solid var(--color-2);
+    border-top: none;
+    color: var(--color-5);
+    font-size: 1rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin: 0 auto;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quiz-creator-save-button:hover {
+    background-color: var(--color-5);
+    color: var(--color-2);
+    cursor: pointer;
 }

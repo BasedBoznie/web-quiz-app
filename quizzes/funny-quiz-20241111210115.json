@@ -1,0 +1,14 @@
+{
+  "title": "funny quiz",
+  "timestamp": "20241111210115",
+  "questions": [
+    {
+      "question": "Enter question",
+      "options": [
+        "haha... thats funny",
+        "what a jonkler this guy"
+      ],
+      "answer": "what a jonkler this guy"
+    }
+  ]
+}
